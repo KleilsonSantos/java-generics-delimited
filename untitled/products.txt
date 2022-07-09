@@ -1,0 +1,4 @@
+Samsung S22 Ultra,6090.50
+IPhone 13,9100.00
+iPad Pro,1050.00
+Apple Watch 7,6893.00
