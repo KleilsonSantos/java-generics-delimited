@@ -1,5 +1,6 @@
 package application;
 
+import entitie.Product;
 import service.CalculationService;
 
 import java.io.BufferedReader;
@@ -14,18 +15,20 @@ public class Program {
 
     public static void main(String[] args) throws RuntimeException {
 
-        List<Integer> integerList = new ArrayList<>();
-        var path = "numbers.txt";
+        List<Product> productList = new ArrayList<>();
+        var path = "products.txt";
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(path))) {
             String line = bufferedReader.readLine();
+            String[] vect;
             while (line != null){
-                integerList.add(Integer.parseInt(line));
+                vect = line.split(",");
+                productList.add(new Product(vect[0],Double.parseDouble(vect[1])));
                 line = bufferedReader.readLine();
             }
-            Collections.sort(integerList);
-            var max = CalculationService.max(integerList);
-            System.out.println(integerList);
-            System.out.println("Max number -> " + max);
+            Collections.sort(productList);
+            var max = CalculationService.max(productList);
+            //System.out.println(productList);
+            System.out.println("Most expensive: -> " + max);
         } catch (IOException | IndexOutOfBoundsException e) {
             throw new RuntimeException("Error -> " + e.getMessage());
         }
