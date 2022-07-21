@@ -1,10 +1,6 @@
 package entitie;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.util.Objects;
-
-public class Product implements Comparable<Product> {
+public class Product  {
     private String name;
     private Double price;
 
@@ -38,10 +34,5 @@ public class Product implements Comparable<Product> {
                 "name='" + name + '\'' +
                 ", price=" + price +
                 '}';
-    }
-
-    @Override
-    public int compareTo(@NotNull Product other) {
-        return -price.compareTo(other.getPrice());
     }
 }

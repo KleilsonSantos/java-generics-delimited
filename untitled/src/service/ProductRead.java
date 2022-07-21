@@ -11,7 +11,6 @@ import java.util.List;
 
 public class ProductRead {
     private static final List<Product> productList = new ArrayList<>();
-
     public void getLists(String path) {
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(path))) {
             String line = bufferedReader.readLine();
@@ -20,7 +19,7 @@ public class ProductRead {
                 productList.add(new Product(vect[0], Double.parseDouble(vect[1])));
                 line = bufferedReader.readLine();
             }
-            productList.sort(Comparator.comparing(Product::getName));
+            productList.sort(Comparator.comparing(Product::getPrice));
             var product = productList.get(0);
             System.out.println("Most expensive product: -> " + product);
         } catch (IOException | IndexOutOfBoundsException e) {

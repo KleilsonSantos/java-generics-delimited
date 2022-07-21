@@ -1,4 +1,6 @@
 Samsung S22 Ultra,6090.50
-IPhone 13,9100.00
-iPad Pro,1050.00
-Apple Watch 7,6893.00
+IPhone 13,9100.35
+iPad Pro,1050.53
+Apple Watch 7,6893.22
+JBL Boombox 3,2316.42
+AirPods Pro, 1894.32
